@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iQuess Consulting bv – Senior Management & Digital Transformation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; overflow: hidden;
+}
+.hero-left {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 8rem 4rem 4rem 5rem;
+  animation: fadeUp 0.9s 0.2s ease both;
+  background: var(--iqcs-wit);
+  position: relative; z-index: 2;
+}
+/* Blauwe verticale accentbalk links — brand element */
+.hero-left::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--iqcs-blauw);
+}
+
+.hero-company {
+  display: flex; flex-direction: column; margin-bottom: 1.8rem;
+}
+.hero-company-main {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--iqcs-blauw);
+}
+.hero-company-sub {
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--iqcs-donker);
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 4.2vw, 4.2rem); font-weight: 900;
+  color: var(--iqcs-donker); line-height: 1.06; margin-bottom: 1.5rem;
+}
+.hero-title span { color: var(--iqcs-blauw); }
+
+.hero-sub {
+  font-size: 1rem; font-weight: 400; line-height: 1.75;
+  color: var(--text-mid); max-width: 460px; margin-bottom: 2.5rem;
+}
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+
+.hero-stats {
+  display: flex; gap: 0; flex-wrap: wrap;
+  border-top: 2px solid var(--iqcs-grijs);
+  padding-top: 2rem;
+}
+.stat {
+  flex: 1; min-width: 100px; padding-right: 2rem;
+  border-right: 1px solid var(--iqcs-grijs);
+  margin-right: 2rem;
+}
+.stat:last-child { border-right: none; margin-right: 0; }
+.stat-num {
+  font-size: 2rem; font-weight: 900; color: var(--iqcs-blauw); line-height: 1;
+}
+.stat-label { font-size: 0.76rem; color: var(--text-mid); margin-top: 0.2rem; font-weight: 600; }
+
+/* Hero rechts — IQCS blauw vlak met stippen motief */
+.hero-right {
+  background: var(--iqcs-blauw);
+  position: relative; overflow: hidden;
+  animation: fadeIn 1s 0.4s ease both;
+}
+.hero-right::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, var(--iqcs-donker) 0%, var(--iqcs-blauw) 100%);
+}
+.hero-dots {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid; grid-template-columns: repeat(5,1fr);
+  gap: 1.5rem; opacity: 0.22; pointer-events: none;
+}
+.hero-dots .d { background: var(--iqcs-licht); border-radius: 50%; animation: breathe 3.5s infinite ease-in-out; }
+
+.hero-card {
+  position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(217,242,253,0.3);
+  border-radius: 4px; padding: 1.8rem 2.2rem;
+  width: 82%; color: var(--iqcs-wit);
+}
+/* Blauwe top-balk op card — brand element */
+.hero-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--iqcs-licht);
+}
+.hero-card-name {
+  font-size: 1.4rem; font-weight: 900; margin-bottom: 0.25rem;
+  letter-spacing: 0.01em;
+}
+.hero-card-title { font-size: 0.8rem; color: var(--iqcs-licht); letter-spacing: 0.04em; }
+.hero-card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.1rem; }
+.hero-card-tag {
+  background: rgba(217,242,253,0.18); border: 1px solid rgba(217,242,253,0.3);
+  border-radius: 2px; padding: 0.25rem 0.7rem;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+}
+
+/* ── DIENSTEN ── */
+.diensten { padding: 6rem 0; background: var(--iqcs-bg-licht); }
+.diensten-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.dienst-card {
+  background: var(--iqcs-wit);
+  border-top: 4px solid var(--iqcs-blauw);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--iqcs-blauw);
+  padding: 2rem; border-radius: 2px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.dienst-card:hover { transform: translateY(-5px); box-shadow: 0 14px 44px rgba(33,121,168,0.13); }
+.dienst-icon {
+  width: 46px; height: 46px; background: var(--iqcs-licht);
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 1.1rem;
+}
+.dienst-title { font-size: 1.05rem; font-weight: 800; color: var(--iqcs-donker); margin-bottom: 0.5rem; }
+.dienst-desc { font-size: 0.87rem; font-weight: 400; color: var(--text-mid); line-height: 1.65; }
+
+/* ── WAAROM IQCS ── */
+.waarom { padding: 6rem 0; background: var(--iqcs-wit); }
+.waarom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+
+/* Blauw info-blok links */
+.waarom-visual {
+  background: var(--iqcs-blauw);
+  border-radius: 4px; padding: 3.5rem;
+  color: var(--iqcs-wit); position: relative; overflow: hidden;
+}
+.waarom-visual::after {
+  content: '';
+  position: absolute; bottom: -40px; right: -40px;
+  width: 200px; height: 200px;
+  background-image: radial-gradient(circle, rgba(217,242,253,0.2) 3px, transparent 3px);
+  background-size: 22px 22px; border-radius: 50%;
+}
+.wv-stat { margin-bottom: 2rem; }
+.wv-stat:last-child { margin-bottom: 0; }
+.wv-num { font-size: 2.8rem; font-weight: 900; color: var(--iqcs-licht); line-height: 1; }
+.wv-label { font-size: 0.85rem; color: rgba(255,255,255,0.75); margin-top: 0.2rem; font-weight: 600; }
+.wv-divider { height: 1px; background: rgba(217,242,253,0.25); margin: 1.5rem 0; }
+
+.waarom-content .section-title { margin-bottom: 1.5rem; }
+.w-punt { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+.w-punt-icon {
+  width: 34px; height: 34px; background: var(--iqcs-blauw); border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--iqcs-wit); font-size: 0.85rem; font-weight: 900; flex-shrink: 0;
+}
+.w-punt h4 { font-size: 0.92rem; font-weight: 800; color: var(--iqcs-donker); margin-bottom: 0.2rem; }
+.w-punt p { font-size: 0.86rem; color: var(--text-mid); line-height: 1.6; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--iqcs-donker); padding: 5rem 0;
+  text-align: center; color: var(--iqcs-wit);
+  position: relative; overflow: hidden;
+}
+.cta-banner::before {
+  content: '';
+  position: absolute; left: -60px; top: -60px;
+  width: 260px; height: 260px;
+  background-image: radial-gradient(circle, rgba(217,242,253,0.12) 3px, transparent 3px);
+  background-size: 24px 24px; border-radius: 50%;
+}
+.cta-banner::after {
+  content: '';
+  position: absolute; right: -60px; bottom: -60px;
+  width: 260px; height: 260px;
+  background-image: radial-gradient(circle, rgba(217,242,253,0.12) 3px, transparent 3px);
+  background-size: 24px 24px; border-radius: 50%;
+}
+.cta-banner h2 { font-size: clamp(1.8rem,3vw,2.5rem); margin-bottom: 0.8rem; position: relative; }
+.cta-banner p { font-size: 1rem; color: var(--iqcs-licht); margin-bottom: 2rem; position: relative; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+@media (max-width:900px) {
+  .hero { grid-template-columns:1fr; }
+  .hero-left { padding: 7rem 1.5rem 3rem; }
+  .hero-right { min-height: 340px; }
+  .diensten-grid { grid-template-columns:1fr; }
+  .waarom-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-company">
+      <span class="hero-company-main">IQUESS</span>
+      <span class="hero-company-sub">Consulting bv</span>
+    </div>
+    <h1 class="hero-title" data-nl="Strategie.<br>Transformatie.<br><span>Resultaten.</span>" data-en="Strategy.<br>Transformation.<br><span>Results.</span>">Strategie.<br>Transformatie.<br><span>Resultaten.</span></h1>
+    <p class="hero-sub" data-nl="30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Wim Verfaille verbindt technologie met zakelijk inzicht." data-en="30+ years of proven expertise in operational management, digital transformation and ERP implementations. Wim Verfaille connects technology with business insight.">30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Wim Verfaille verbindt technologie met zakelijk inzicht.</p>
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn-primary" data-nl="Samenwerken?" data-en="Let's work together?">Samenwerken?</a>
+      <a href="services.html" class="btn-outline" data-nl="Mijn diensten" data-en="My services">Mijn diensten</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">30+</div><div class="stat-label" data-nl="Jaar ervaring" data-en="Years experience">Jaar ervaring</div></div>
+      <div class="stat"><div class="stat-num">20%</div><div class="stat-label" data-nl="Efficiëntiewinst ERP" data-en="ERP efficiency gain">Efficiëntiewinst ERP</div></div>
+      <div class="stat"><div class="stat-num">€1M+</div><div class="stat-label" data-nl="Gegenereerde omzet" data-en="Revenue generated">Gegenereerde omzet</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-dots">
+      <div class="d" style="width:14px;height:14px"></div><div class="d" style="width:28px;height:28px;animation-delay:.4s"></div><div class="d" style="width:12px;height:12px;animation-delay:.8s"></div><div class="d" style="width:20px;height:20px;animation-delay:1.2s"></div><div class="d" style="width:16px;height:16px;animation-delay:.2s"></div>
+      <div class="d" style="width:32px;height:32px;animation-delay:.3s"></div><div class="d" style="width:10px;height:10px;animation-delay:.7s"></div><div class="d" style="width:24px;height:24px;animation-delay:1.1s"></div><div class="d" style="width:8px;height:8px;animation-delay:.5s"></div><div class="d" style="width:18px;height:18px;animation-delay:.9s"></div>
+      <div class="d" style="width:22px;height:22px;animation-delay:.6s"></div><div class="d" style="width:36px;height:36px;animation-delay:0s"></div><div class="d" style="width:10px;height:10px;animation-delay:1s"></div><div class="d" style="width:26px;height:26px;animation-delay:.4s"></div><div class="d" style="width:14px;height:14px;animation-delay:.8s"></div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-name">Wim Verfaille</div>
+      <div class="hero-card-title" data-nl="CIO · COO · Program Manager · Lean Six Sigma Black Belt" data-en="CIO · COO · Program Manager · Lean Six Sigma Black Belt">CIO · COO · Program Manager · Lean Six Sigma Black Belt</div>
+      <div class="hero-card-tags">
+        <span class="hero-card-tag">SAP ERP</span>
+        <span class="hero-card-tag">MS Dynamics 365</span>
+        <span class="hero-card-tag">Azure</span>
+        <span class="hero-card-tag">PRINCE2</span>
+        <span class="hero-card-tag">Agile</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIENSTEN -->
+<section class="diensten">
+  <div class="container">
+    <div class="reveal">
+      <div class="header-bar" data-nl="Expertisedomeinen" data-en="Areas of expertise">Expertisedomeinen</div>
+      <h2 class="section-title" data-nl="Wat iQuess Consulting voor u <span>betekent</span>" data-en="What iQuess Consulting can do <span>for you</span>">Wat iQuess Consulting voor u <span>betekent</span></h2>
+      <p class="section-sub" data-nl="Van strategische planning tot operationele uitvoering — meetbare resultaten in complexe omgevingen." data-en="From strategic planning to operational execution — measurable results in complex environments.">Van strategische planning tot operationele uitvoering — meetbare resultaten in complexe omgevingen.</p>
+    </div>
+    <div class="diensten-grid">
+      <div class="dienst-card reveal"><div class="dienst-icon">🔄</div><h3 class="dienst-title" data-nl="Digitale Transformatie" data-en="Digital Transformation">Digitale Transformatie</h3><p class="dienst-desc" data-nl="End-to-end begeleiding van transformatietrajecten met focus op strategie, implementatie en adoptie." data-en="End-to-end guidance of transformation journeys with focus on strategy, implementation and adoption.">End-to-end begeleiding van transformatietrajecten met focus op strategie, implementatie en adoptie.</p></div>
+      <div class="dienst-card reveal"><div class="dienst-icon">📦</div><h3 class="dienst-title" data-nl="ERP-implementatie" data-en="ERP Implementation">ERP-implementatie</h3><p class="dienst-desc" data-nl="Bewezen expertise in SAP ERP en MS Dynamics 365 — van business analyse tot go-live." data-en="Proven expertise in SAP ERP and MS Dynamics 365 — from business analysis to go-live.">Bewezen expertise in SAP ERP en MS Dynamics 365 — van business analyse tot go-live.</p></div>
+      <div class="dienst-card reveal"><div class="dienst-icon">📋</div><h3 class="dienst-title" data-nl="Program Management" data-en="Program Management">Program Management</h3><p class="dienst-desc" data-nl="PMO-opzet en projectleiding via Agile, Scrum en PRINCE2. Rapportage op bestuursniveau." data-en="PMO setup and project leadership via Agile, Scrum and PRINCE2. Board-level reporting.">PMO-opzet en projectleiding via Agile, Scrum en PRINCE2. Rapportage op bestuursniveau.</p></div>
+      <div class="dienst-card reveal"><div class="dienst-icon">⚙️</div><h3 class="dienst-title" data-nl="Lean Six Sigma" data-en="Lean Six Sigma">Lean Six Sigma</h3><p class="dienst-desc" data-nl="Als Black Belt identificeer ik verspilling en creëer aantoonbare efficiëntieverbeteringen." data-en="As a Black Belt I identify waste and create demonstrable efficiency improvements.">Als Black Belt identificeer ik verspilling en creëer aantoonbare efficiëntieverbeteringen.</p></div>
+      <div class="dienst-card reveal"><div class="dienst-icon">🏢</div><h3 class="dienst-title" data-nl="CIO / COO Interim" data-en="CIO / COO Interim">CIO / COO Interim</h3><p class="dienst-desc" data-nl="Interim C-level aansturing van IT- en operationele afdelingen, inclusief M&A begeleiding." data-en="Interim C-level management of IT and operational departments, including M&A guidance.">Interim C-level aansturing van IT- en operationele afdelingen, inclusief M&A begeleiding.</p></div>
+      <div class="dienst-card reveal"><div class="dienst-icon">🚀</div><h3 class="dienst-title" data-nl="Verandermanagement" data-en="Change Management">Verandermanagement</h3><p class="dienst-desc" data-nl="Communicatie, training en stakeholder engagement voor succesvolle organisatieverandering." data-en="Communication, training and stakeholder engagement for successful organisational change.">Communicatie, training en stakeholder engagement voor succesvolle organisatieverandering.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="reveal">
+      <a href="services.html" class="btn-primary" data-nl="Alle diensten bekijken →" data-en="View all services →">Alle diensten bekijken →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WAAROM IQCS -->
+<section class="waarom">
+  <div class="container">
+    <div class="waarom-grid">
+      <div class="waarom-visual reveal">
+        <div class="wv-stat"><div class="wv-num">30+</div><div class="wv-label" data-nl="Jaar professionele ervaring" data-en="Years of professional experience">Jaar professionele ervaring</div></div>
+        <div class="wv-divider"></div>
+        <div class="wv-stat"><div class="wv-num">20%</div><div class="wv-label" data-nl="Efficiëntiewinst gerealiseerd via SAP ERP" data-en="Efficiency gain via SAP ERP implementation">Efficiëntiewinst gerealiseerd via SAP ERP</div></div>
+        <div class="wv-divider"></div>
+        <div class="wv-stat"><div class="wv-num">30%</div><div class="wv-label" data-nl="Omzetgroei via PCI DSS betaalplatform" data-en="Revenue growth via PCI DSS payment platform">Omzetgroei via PCI DSS betaalplatform</div></div>
+        <div class="wv-divider"></div>
+        <div class="wv-stat"><div class="wv-num">€1M+</div><div class="wv-label" data-nl="Nieuwe jaarlijkse inkomsten gegenereerd" data-en="New annual revenue generated">Nieuwe jaarlijkse inkomsten gegenereerd</div></div>
+      </div>
+      <div class="waarom-content reveal">
+        <div class="header-bar" data-nl="Waarom iQuess Consulting" data-en="Why iQuess Consulting">Waarom iQuess Consulting</div>
+        <h2 class="section-title" data-nl="Technologie én <span>zakelijk inzicht</span>" data-en="Technology and <span>business insight</span>">Technologie én <span>zakelijk inzicht</span></h2>
+        <div class="w-punt"><div class="w-punt-icon">1</div><div><h4 data-nl="Bewezen resultaten" data-en="Proven results">Bewezen resultaten</h4><p data-nl="30+ jaar aantoonbare prestaties in uiteenlopende sectoren en complexe omgevingen." data-en="30+ years of demonstrable achievements across diverse sectors and complex environments.">30+ jaar aantoonbare prestaties in uiteenlopende sectoren en complexe omgevingen.</p></div></div>
+        <div class="w-punt"><div class="w-punt-icon">2</div><div><h4 data-nl="End-to-end aanpak" data-en="End-to-end approach">End-to-end aanpak</h4><p data-nl="Van strategievorming tot uitvoering en nazorg — het volledige traject begeleid." data-en="From strategy to execution and follow-up — the complete journey guided.">Van strategievorming tot uitvoering en nazorg — het volledige traject begeleid.</p></div></div>
+        <div class="w-punt"><div class="w-punt-icon">3</div><div><h4 data-nl="Taalvaardig & flexibel" data-en="Multilingual & flexible">Taalvaardig & flexibel</h4><p data-nl="Actief in NL, EN en FR — klaar voor nationale en internationale opdrachten." data-en="Active in NL, EN and FR — ready for national and international assignments.">Actief in NL, EN en FR — klaar voor nationale en internationale opdrachten.</p></div></div>
+        <a href="about.html" class="btn-outline" data-nl="Meer over Wim Verfaille" data-en="More about Wim Verfaille">Meer over Wim Verfaille</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container reveal">
+    <h2 data-nl="Klaar voor uw volgende transformatie?" data-en="Ready for your next transformation?">Klaar voor uw volgende transformatie?</h2>
+    <p data-nl="Laten we bespreken hoe iQuess Consulting uw organisatie vooruit kan helpen." data-en="Let's discuss how iQuess Consulting can help your organisation move forward.">Laten we bespreken hoe iQuess Consulting uw organisatie vooruit kan helpen.</p>
+    <a href="contact.html" class="btn-white" data-nl="Neem contact op" data-en="Get in touch">Neem contact op</a>
+  </div>
+</section>
+
+<div id="footer-container"></div>
+<script src="nav-footer.js"></script>
+<script src="main.js"></script>
+<script>
+  document.getElementById('nav-container').innerHTML = getNavHTML('index.html');
+  document.getElementById('footer-container').innerHTML = getFooterHTML();
+</script>
+</body>
+</html>

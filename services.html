@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diensten – IQCS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.nav-brand{display:flex;flex-direction:column;line-height:1}
+.nav-brand-main{font-size:1.05rem;font-weight:800;color:#2179A8;letter-spacing:.12em;text-transform:uppercase}
+.nav-brand-sub{font-size:.6rem;font-weight:700;color:#05486E;letter-spacing:.18em;text-transform:uppercase}
+</style>
+<style>
+.services-main { padding: 6rem 0; background: var(--iqcs-wit); }
+.services-intro { text-align: center; margin-bottom: 4rem; }
+.services-intro .section-sub { max-width: 700px; margin: 0 auto 0; }
+
+.service-block {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--border); margin-bottom: 3rem;
+  transition: box-shadow 0.3s;
+}
+.service-block:hover { box-shadow: 0 16px 60px rgba(42,122,173,0.12); }
+.service-block:nth-child(even) .service-block-visual { order: -1; }
+
+.service-block-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+.service-block-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+.service-block-title { font-size: 1.6rem; font-weight: 700; color: var(--text-body); margin-bottom: 0.8rem; }
+.service-block-desc { font-size: 0.95rem; font-weight: 300; color: var(--text-mid); line-height: 1.75; margin-bottom: 1.5rem; }
+.service-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.service-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.88rem; color: var(--text-mid); }
+.service-list li::before { content: '→'; color: var(--iqcs-donker); font-weight: 700; flex-shrink: 0; }
+
+.service-block-visual {
+  background: linear-gradient(135deg, var(--iqcs-bg-licht) 0%, var(--iqcs-midden) 100%);
+  display: flex; align-items: center; justify-content: center;
+  padding: 3rem; min-height: 280px;
+}
+.service-visual-inner {
+  text-align: center;
+}
+.service-big-icon { font-size: 5rem; display: block; margin-bottom: 1.5rem; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+.service-tag { background: rgba(42,122,173,0.12); color: var(--iqcs-donker); border-radius: 4px; padding: 0.35rem 0.85rem; font-size: 0.78rem; font-weight: 500; }
+
+.process-section { padding: 6rem 0; background: var(--iqcs-bg-licht); }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; position: relative; }
+.process-steps::before {
+  content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(90deg, var(--iqcs-donker), var(--iqcs-midden)); z-index: 0;
+}
+.process-step { text-align: center; position: relative; z-index: 1; }
+.step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--iqcs-donker); color: var(--iqcs-wit);
+  font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem; border: 4px solid var(--iqcs-bg-licht);
+  box-shadow: 0 4px 16px rgba(42,122,173,0.25);
+}
+.step-title { font-weight: 700; font-size: 0.95rem; color: var(--text-body); margin-bottom: 0.4rem; }
+.step-desc { font-size: 0.82rem; font-weight: 300; color: var(--text-mid); line-height: 1.55; }
+
+@media (max-width: 900px) {
+  .service-block { grid-template-columns: 1fr; }
+  .service-block:nth-child(even) .service-block-visual { order: 0; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .process-steps::before { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<div class="page-hero">
+  <h1 data-nl="Diensten & Expertise" data-en="Services & Expertise">Diensten & Expertise</h1>
+  <p data-nl="Gerichte oplossingen voor complexe uitdagingen" data-en="Targeted solutions for complex challenges">Gerichte oplossingen voor complexe uitdagingen</p>
+</div>
+
+<section class="services-main">
+  <div class="container">
+    <div class="services-intro reveal">
+      <p class="section-label" data-nl="Wat ik aanbied" data-en="What I offer">Wat ik aanbied</p>
+      <h2 class="section-title" data-nl="Zes kerngebieden van <span>expertise</span>" data-en="Six core areas of <span>expertise</span>">Zes kerngebieden van <span>expertise</span></h2>
+      <p class="section-sub" data-nl="Elke opdracht is uniek. Ik breng de juiste combinatie van methodologie, technologie en menselijk inzicht om uw doelstellingen te bereiken." data-en="Every assignment is unique. I bring the right combination of methodology, technology and human insight to achieve your objectives.">Elke opdracht is uniek. Ik breng de juiste combinatie van methodologie, technologie en menselijk inzicht om uw doelstellingen te bereiken.</p>
+    </div>
+
+    <!-- Service 1 -->
+    <div class="service-block reveal">
+      <div class="service-block-content">
+        <div class="service-block-icon">🔄</div>
+        <h3 class="service-block-title" data-nl="Digitale Transformatie" data-en="Digital Transformation">Digitale Transformatie</h3>
+        <p class="service-block-desc" data-nl="Begeleiding bij end-to-end digitale transformatietrajecten. Van strategiebepaling en roadmap ontwikkeling tot implementatie, change management en gebruikersadoptie." data-en="Guidance through end-to-end digital transformation journeys. From strategy definition and roadmap development to implementation, change management and user adoption.">Begeleiding bij end-to-end digitale transformatietrajecten. Van strategiebepaling en roadmap ontwikkeling tot implementatie, change management en gebruikersadoptie.</p>
+        <ul class="service-list">
+          <li data-nl="Digitale strategie & roadmap" data-en="Digital strategy & roadmap">Digitale strategie & roadmap</li>
+          <li data-nl="Cloud migraties (Azure, AWS)" data-en="Cloud migrations (Azure, AWS)">Cloud migraties (Azure, AWS)</li>
+          <li data-nl="API & integratiearchitectuur" data-en="API & integration architecture">API & integratiearchitectuur</li>
+          <li data-nl="Adoptie & change management" data-en="Adoption & change management">Adoptie & change management</li>
+        </ul>
+      </div>
+      <div class="service-block-visual">
+        <div class="service-visual-inner">
+          <span class="service-big-icon">🔄</span>
+          <div class="service-tags"><span class="service-tag">Azure</span><span class="service-tag">AWS</span><span class="service-tag">MuleSoft</span><span class="service-tag">API</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-block reveal">
+      <div class="service-block-content">
+        <div class="service-block-icon">📦</div>
+        <h3 class="service-block-title" data-nl="ERP-implementatie" data-en="ERP Implementation">ERP-implementatie</h3>
+        <p class="service-block-desc" data-nl="Bewezen expertise in SAP ERP en Microsoft Dynamics 365 implementaties. Van business analyse en blueprint tot configuratie, testing, training en go-live." data-en="Proven expertise in SAP ERP and Microsoft Dynamics 365 implementations. From business analysis and blueprint to configuration, testing, training and go-live.">Bewezen expertise in SAP ERP en Microsoft Dynamics 365 implementaties. Van business analyse en blueprint tot configuratie, testing, training en go-live.</p>
+        <ul class="service-list">
+          <li data-nl="SAP ERP (SD/CS/MM/PP/WM)" data-en="SAP ERP (SD/CS/MM/PP/WM)">SAP ERP (SD/CS/MM/PP/WM)</li>
+          <li data-nl="Microsoft Dynamics 365 F&O / CE / FSM" data-en="Microsoft Dynamics 365 F&O / CE / FSM">Microsoft Dynamics 365 F&O / CE / FSM</li>
+          <li data-nl="Business analyse & requirements" data-en="Business analysis & requirements">Business analyse & requirements</li>
+          <li data-nl="Test management & UAT" data-en="Test management & UAT">Test management & UAT</li>
+        </ul>
+      </div>
+      <div class="service-block-visual">
+        <div class="service-visual-inner">
+          <span class="service-big-icon">📦</span>
+          <div class="service-tags"><span class="service-tag">SAP ERP</span><span class="service-tag">MS D365</span><span class="service-tag">EDI</span><span class="service-tag">Integration</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-block reveal">
+      <div class="service-block-content">
+        <div class="service-block-icon">📋</div>
+        <h3 class="service-block-title" data-nl="Program & Project Management" data-en="Program & Project Management">Program & Project Management</h3>
+        <p class="service-block-desc" data-nl="PMO-opzet en projectleiding via Agile, Scrum, PRINCE2 en Waterval. Ik manage scope, budget, risico's en stakeholders met duidelijke rapportage op bestuursniveau." data-en="PMO setup and project leadership via Agile, Scrum, PRINCE2 and Waterfall. I manage scope, budget, risks and stakeholders with clear board-level reporting.">PMO-opzet en projectleiding via Agile, Scrum, PRINCE2 en Waterval. Ik manage scope, budget, risico's en stakeholders met duidelijke rapportage op bestuursniveau.</p>
+        <ul class="service-list">
+          <li data-nl="PMO setup & governance" data-en="PMO setup & governance">PMO setup & governance</li>
+          <li data-nl="Agile Scrum & PRINCE2" data-en="Agile Scrum & PRINCE2">Agile Scrum & PRINCE2</li>
+          <li data-nl="Risico- & issuebeheer" data-en="Risk & issue management">Risico- & issuebeheer</li>
+          <li data-nl="Rapportage & dashboard" data-en="Reporting & dashboard">Rapportage & dashboard</li>
+        </ul>
+      </div>
+      <div class="service-block-visual">
+        <div class="service-visual-inner">
+          <span class="service-big-icon">📋</span>
+          <div class="service-tags"><span class="service-tag">PRINCE2</span><span class="service-tag">Agile</span><span class="service-tag">Jira</span><span class="service-tag">MS Project</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-block reveal">
+      <div class="service-block-content">
+        <div class="service-block-icon">⚙️</div>
+        <h3 class="service-block-title" data-nl="Lean Six Sigma & Procesoptimalisatie" data-en="Lean Six Sigma & Process Optimisation">Lean Six Sigma & Procesoptimalisatie</h3>
+        <p class="service-block-desc" data-nl="Als gecertificeerd Lean Six Sigma Black Belt analyseer en optimaliseer ik operationele processen. Ik elimineer verspilling en creëer aantoonbare, duurzame efficiëntieverbeteringen." data-en="As a certified Lean Six Sigma Black Belt, I analyse and optimise operational processes. I eliminate waste and create demonstrable, sustainable efficiency improvements.">Als gecertificeerd Lean Six Sigma Black Belt analyseer en optimaliseer ik operationele processen. Ik elimineer verspilling en creëer aantoonbare, duurzame efficiëntieverbeteringen.</p>
+        <ul class="service-list">
+          <li data-nl="Procesanalyse & mapping (AS-IS / TO-BE)" data-en="Process analysis & mapping (AS-IS / TO-BE)">Procesanalyse & mapping (AS-IS / TO-BE)</li>
+          <li data-nl="Lean workshops & kaizen events" data-en="Lean workshops & kaizen events">Lean workshops & kaizen events</li>
+          <li data-nl="KPI-definitie & dashboarding" data-en="KPI definition & dashboarding">KPI-definitie & dashboarding</li>
+          <li data-nl="Agile coaching" data-en="Agile coaching">Agile coaching</li>
+        </ul>
+      </div>
+      <div class="service-block-visual">
+        <div class="service-visual-inner">
+          <span class="service-big-icon">⚙️</span>
+          <div class="service-tags"><span class="service-tag">Lean</span><span class="service-tag">Six Sigma</span><span class="service-tag">Black Belt</span><span class="service-tag">Kaizen</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-block reveal">
+      <div class="service-block-content">
+        <div class="service-block-icon">🏢</div>
+        <h3 class="service-block-title" data-nl="CIO / COO Interim Management" data-en="CIO / COO Interim Management">CIO / COO Interim Management</h3>
+        <p class="service-block-desc" data-nl="Beschikbaar als interim CIO of COO voor strategische aansturing van IT- en operationele afdelingen. Ik stap in wanneer snel leiderschap nodig is, met directe impact op de bedrijfsresultaten." data-en="Available as interim CIO or COO for strategic management of IT and operational departments. I step in when rapid leadership is needed, with direct impact on business results.">Beschikbaar als interim CIO of COO voor strategische aansturing van IT- en operationele afdelingen. Ik stap in wanneer snel leiderschap nodig is, met directe impact op de bedrijfsresultaten.</p>
+        <ul class="service-list">
+          <li data-nl="IT-strategie & budgetbeheer" data-en="IT strategy & budget management">IT-strategie & budgetbeheer</li>
+          <li data-nl="Teamleiding & talentmanagement" data-en="Team leadership & talent management">Teamleiding & talentmanagement</li>
+          <li data-nl="Vendor & contractmanagement" data-en="Vendor & contract management">Vendor & contractmanagement</li>
+          <li data-nl="M&A due diligence & integratie" data-en="M&A due diligence & integration">M&A due diligence & integratie</li>
+        </ul>
+      </div>
+      <div class="service-block-visual">
+        <div class="service-visual-inner">
+          <span class="service-big-icon">🏢</span>
+          <div class="service-tags"><span class="service-tag">CIO</span><span class="service-tag">COO</span><span class="service-tag">M&A</span><span class="service-tag">Leadership</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-block reveal">
+      <div class="service-block-content">
+        <div class="service-block-icon">🚀</div>
+        <h3 class="service-block-title" data-nl="Verandermanagement" data-en="Change Management">Verandermanagement</h3>
+        <p class="service-block-desc" data-nl="Succesvolle organisatieverandering vereist meer dan een goed plan. Ik zorg voor communicatie, training en stakeholder engagement zodat verandering verankerd wordt in de cultuur." data-en="Successful organisational change requires more than a good plan. I ensure communication, training and stakeholder engagement so that change becomes embedded in the culture.">Succesvolle organisatieverandering vereist meer dan een goed plan. Ik zorg voor communicatie, training en stakeholder engagement zodat verandering verankerd wordt in de cultuur.</p>
+        <ul class="service-list">
+          <li data-nl="Communicatieplanning & rollout" data-en="Communication planning & rollout">Communicatieplanning & rollout</li>
+          <li data-nl="Training & workshop facilitatie" data-en="Training & workshop facilitation">Training & workshop facilitatie</li>
+          <li data-nl="Weerstandsmanagement" data-en="Resistance management">Weerstandsmanagement</li>
+          <li data-nl="Post-implementatie borging" data-en="Post-implementation embedding">Post-implementatie borging</li>
+        </ul>
+      </div>
+      <div class="service-block-visual">
+        <div class="service-visual-inner">
+          <span class="service-big-icon">🚀</span>
+          <div class="service-tags"><span class="service-tag">Change</span><span class="service-tag">Training</span><span class="service-tag">Communication</span><span class="service-tag">Coaching</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div class="reveal" style="text-align:center; margin-bottom:0;">
+      <p class="section-label" data-nl="Werkwijze" data-en="Approach">Werkwijze</p>
+      <h2 class="section-title" data-nl="Hoe ik te werk <span>ga</span>" data-en="How I <span>work</span>">Hoe ik te werk <span>ga</span></h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">1</div>
+        <div class="step-title" data-nl="Intake & Diagnose" data-en="Intake & Diagnosis">Intake & Diagnose</div>
+        <div class="step-desc" data-nl="Grondige analyse van uw situatie, doelstellingen en uitdagingen." data-en="Thorough analysis of your situation, objectives and challenges.">Grondige analyse van uw situatie, doelstellingen en uitdagingen.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">2</div>
+        <div class="step-title" data-nl="Strategie & Plan" data-en="Strategy & Plan">Strategie & Plan</div>
+        <div class="step-desc" data-nl="Ontwikkeling van een concreet, haalbaar actieplan met KPI's." data-en="Development of a concrete, achievable action plan with KPIs.">Ontwikkeling van een concreet, haalbaar actieplan met KPI's.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">3</div>
+        <div class="step-title" data-nl="Uitvoering" data-en="Execution">Uitvoering</div>
+        <div class="step-desc" data-nl="Hands-on begeleiding en projectleiding tot aan het resultaat." data-en="Hands-on guidance and project management through to the result.">Hands-on begeleiding en projectleiding tot aan het resultaat.</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">4</div>
+        <div class="step-title" data-nl="Borging & Transfer" data-en="Embedding & Transfer">Borging & Transfer</div>
+        <div class="step-desc" data-nl="Kennis en processen worden overgedragen aan uw teams." data-en="Knowledge and processes are transferred to your teams.">Kennis en processen worden overgedragen aan uw teams.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-container"></div>
+<script src="nav-footer.js"></script>
+<script src="main.js"></script>
+<script>
+  document.getElementById('nav-container').innerHTML = getNavHTML('services.html');
+  document.getElementById('footer-container').innerHTML = getFooterHTML();
+</script>
+</body>
+</html>

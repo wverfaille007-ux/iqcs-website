@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Over Wim – IQCS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.nav-brand{display:flex;flex-direction:column;line-height:1}
+.nav-brand-main{font-size:1.05rem;font-weight:800;color:#2179A8;letter-spacing:.12em;text-transform:uppercase}
+.nav-brand-sub{font-size:.6rem;font-weight:700;color:#05486E;letter-spacing:.18em;text-transform:uppercase}
+</style>
+<style>
+.about-intro { padding: 6rem 0; background: var(--iqcs-wit); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; }
+.about-photo-col { position: sticky; top: 120px; }
+.photo-frame {
+  background: linear-gradient(145deg, var(--iqcs-donker), var(--iqcs-blauw));
+  border-radius: 24px; padding: 3px;
+  box-shadow: 0 20px 60px rgba(42,122,173,0.25);
+}
+.photo-inner {
+  background: var(--iqcs-bg-licht);
+  border-radius: 22px;
+  aspect-ratio: 3/4;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; overflow: hidden;
+}
+.photo-placeholder {
+  width: 90px; height: 90px; background: var(--iqcs-donker);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  color: var(--iqcs-wit); font-family: 'Playfair Display',serif; font-size: 2.2rem; font-weight: 700;
+}
+.photo-placeholder-text { font-size: 0.85rem; color: var(--text-mid); text-align: center; padding: 0 1rem; }
+.contact-badge {
+  background: var(--iqcs-wit); border-radius: 4px; padding: 1.2rem 1.5rem;
+  margin-top: 1.5rem; border: 1px solid var(--border);
+}
+.contact-badge-item { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; font-size: 0.88rem; color: var(--text-mid); }
+.contact-badge-item:last-child { margin-bottom: 0; }
+.contact-badge-icon { font-size: 1rem; }
+.contact-badge a { color: var(--iqcs-donker); font-weight: 500; }
+
+.about-content .lead {
+  font-size: 1.15rem; font-weight: 300; line-height: 1.8;
+  color: var(--text-mid); margin-bottom: 2rem;
+  border-left: 3px solid var(--iqcs-donker); padding-left: 1.5rem;
+}
+.about-content h3 { font-size: 1.3rem; font-weight: 700; color: var(--text-body); margin: 2rem 0 0.8rem; }
+.about-content p { font-size: 0.95rem; font-weight: 300; color: var(--text-mid); line-height: 1.8; margin-bottom: 1rem; }
+
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.value-item { background: var(--iqcs-bg-licht); border-radius: 12px; padding: 1.2rem; }
+.value-title { font-size: 0.9rem; font-weight: 700; color: var(--iqcs-donker); margin-bottom: 0.3rem; }
+.value-desc { font-size: 0.82rem; font-weight: 300; color: var(--text-mid); line-height: 1.5; }
+
+.certs-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+.cert-badge {
+  background: var(--iqcs-wit); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 0.7rem 1rem;
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.85rem; font-weight: 500; color: var(--text-body);
+}
+.cert-badge .year { color: var(--text-mid); font-size: 0.78rem; }
+
+.lang-section { padding: 5rem 0; background: var(--iqcs-bg-licht); }
+.lang-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 2rem; }
+.lang-card { background: var(--iqcs-wit); border-radius: 4px; padding: 1.5rem; text-align: center; border: 1px solid var(--border); }
+.lang-flag { font-size: 2rem; margin-bottom: 0.6rem; }
+.lang-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-body); margin-bottom: 0.3rem; }
+.lang-level { font-size: 0.8rem; color: var(--text-mid); }
+.lang-dots { display: flex; gap: 4px; justify-content: center; margin-top: 0.6rem; }
+.lang-dot { width: 8px; height: 8px; background: var(--iqcs-midden); border-radius: 50%; }
+.lang-dot.filled { background: var(--iqcs-donker); }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo-col { position: relative; top: 0; }
+  .values-grid { grid-template-columns: 1fr; }
+  .lang-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<div class="page-hero">
+  <h1 data-nl="Over Wim Verfaille" data-en="About Wim Verfaille">Over Wim Verfaille</h1>
+  <p data-nl="30 jaar management, transformatie en leiderschap" data-en="30 years of management, transformation and leadership">30 jaar management, transformatie en leiderschap</p>
+</div>
+
+<section class="about-intro">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo-col reveal">
+        <div class="photo-frame">
+          <div class="photo-inner">
+            <div class="photo-placeholder">WV</div>
+            <p class="photo-placeholder-text" data-nl="Voeg hier uw professionele foto toe" data-en="Add your professional photo here">Voeg hier uw professionele foto toe</p>
+          </div>
+        </div>
+        <div class="contact-badge">
+          <div class="contact-badge-item"><span class="contact-badge-icon">📍</span> Zwevegem, België</div>
+          <div class="contact-badge-item"><span class="contact-badge-icon">✉️</span> <a href="mailto:Info@IQCS.be">Info@IQCS.be</a></div>
+          <div class="contact-badge-item"><span class="contact-badge-icon">📱</span> <a href="tel:+32498889269">+32 498 889 269</a></div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="reveal">
+          <p class="section-label" data-nl="Professioneel profiel" data-en="Professional profile">Professioneel profiel</p>
+          <h2 class="section-title" data-nl="Resultaten door <span>ervaring</span>" data-en="Results through <span>experience</span>">Resultaten door <span>ervaring</span></h2>
+          <p class="lead" data-nl="Resultaatgerichte manager met 30+ jaar ervaring in operationeel en projectmanagement. Specialist in strategische planning, verandermanagement en procesoptimalisatie." data-en="Results-driven manager with 30+ years of experience in operational and project management. Specialist in strategic planning, change management and process optimisation.">Resultaatgerichte manager met 30+ jaar ervaring in operationeel en projectmanagement. Specialist in strategische planning, verandermanagement en procesoptimalisatie.</p>
+        </div>
+        <div class="reveal">
+          <p data-nl="Ik combineer diepgaande technische expertise met strategisch zakelijk inzicht. Mijn loopbaan omspant rollen als COO, CIO, Program Manager en Lean Coach in uiteenlopende sectoren zoals betaaltechnologie, textiel, verlichtingstechniek en facilitaire dienstverlening." data-en="I combine deep technical expertise with strategic business insight. My career spans roles as COO, CIO, Program Manager and Lean Coach across diverse sectors including payment technology, textiles, lighting technology and facility services.">Ik combineer diepgaande technische expertise met strategisch zakelijk inzicht. Mijn loopbaan omspant rollen als COO, CIO, Program Manager en Lean Coach in uiteenlopende sectoren zoals betaaltechnologie, textiel, verlichtingstechniek en facilitaire dienstverlening.</p>
+          <p data-nl="Bij Keyware Technologies leidde ik gedurende 13 jaar als COO grote transformatieprogramma's: een SAP ERP-implementatie die de efficiëntie met 20% verhoogde, de ontwikkeling van een PCI DSS-conform betaalplatform en de lancering van de Easyorder app die meer dan €1 miljoen per jaar aan nieuwe inkomsten genereerde." data-en="At Keyware Technologies I led major transformation programmes for 13 years as COO: a SAP ERP implementation that increased efficiency by 20%, the development of a PCI DSS-compliant payment platform, and the launch of the Easyorder app that generated over €1 million per year in new revenue.">Bij Keyware Technologies leidde ik gedurende 13 jaar als COO grote transformatieprogramma's: een SAP ERP-implementatie die de efficiëntie met 20% verhoogde, de ontwikkeling van een PCI DSS-conform betaalplatform en de lancering van de Easyorder app die meer dan €1 miljoen per jaar aan nieuwe inkomsten genereerde.</p>
+        </div>
+        <div class="reveal">
+          <h3 data-nl="Werkwaarden" data-en="Work values">Werkwaarden</h3>
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="value-title" data-nl="🎯 Resultaatgericht" data-en="🎯 Results-oriented">🎯 Resultaatgericht</div>
+              <div class="value-desc" data-nl="Meetbare impact staat altijd centraal in mijn aanpak." data-en="Measurable impact is always central to my approach.">Meetbare impact staat altijd centraal in mijn aanpak.</div>
+            </div>
+            <div class="value-item">
+              <div class="value-title" data-nl="🤝 Partnership" data-en="🤝 Partnership">🤝 Partnership</div>
+              <div class="value-desc" data-nl="Ik werk als echte partner met uw teams samen." data-en="I work as a true partner with your teams.">Ik werk als echte partner met uw teams samen.</div>
+            </div>
+            <div class="value-item">
+              <div class="value-title" data-nl="📐 Structuur & Methodiek" data-en="📐 Structure & Methodology">📐 Structuur & Methodiek</div>
+              <div class="value-desc" data-nl="Gebaseerd op bewezen frameworks als Lean, Agile en PRINCE2." data-en="Based on proven frameworks such as Lean, Agile and PRINCE2.">Gebaseerd op bewezen frameworks als Lean, Agile en PRINCE2.</div>
+            </div>
+            <div class="value-item">
+              <div class="value-title" data-nl="💡 Innovatie" data-en="💡 Innovation">💡 Innovatie</div>
+              <div class="value-desc" data-nl="Continue verbetering en technologische vooruitgang." data-en="Continuous improvement and technological advancement.">Continue verbetering en technologische vooruitgang.</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <h3 data-nl="Opleidingen & Certificeringen" data-en="Education & Certifications">Opleidingen & Certificeringen</h3>
+          <div class="certs-row">
+            <div class="cert-badge">🎓 Master Elektriciteit <span class="year">1994</span></div>
+            <div class="cert-badge">⚫ Lean Six Sigma Black Belt <span class="year">2020</span></div>
+            <div class="cert-badge">📋 PRINCE2 Foundation <span class="year">2020</span></div>
+          </div>
+          <p style="margin-top:1rem" data-nl="Master in Elektriciteit behaald aan de Hogeschool West-Vlaanderen (1994). Deze sterke technische basis vormt het fundament onder mijn loopbaan in IT en operationeel management." data-en="Master in Electricity obtained at the Hogeschool West-Vlaanderen (1994). This strong technical foundation underpins my career in IT and operational management.">Master in Elektriciteit behaald aan de Hogeschool West-Vlaanderen (1994). Deze sterke technische basis vormt het fundament onder mijn loopbaan in IT en operationeel management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lang-section">
+  <div class="container">
+    <div class="reveal">
+      <p class="section-label" data-nl="Taalvaardigheid" data-en="Language proficiency">Taalvaardigheid</p>
+      <h2 class="section-title" data-nl="Communicatie zonder <span>grenzen</span>" data-en="Communication without <span>borders</span>">Communicatie zonder <span>grenzen</span></h2>
+    </div>
+    <div class="lang-grid">
+      <div class="lang-card reveal">
+        <div class="lang-flag">🇧🇪</div>
+        <div class="lang-name">Nederlands</div>
+        <div class="lang-level" data-nl="Moedertaal" data-en="Native">Moedertaal</div>
+        <div class="lang-dots"><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div></div>
+      </div>
+      <div class="lang-card reveal">
+        <div class="lang-flag">🇬🇧</div>
+        <div class="lang-name">English</div>
+        <div class="lang-level" data-nl="Vloeiend" data-en="Fluent">Vloeiend</div>
+        <div class="lang-dots"><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div></div>
+      </div>
+      <div class="lang-card reveal">
+        <div class="lang-flag">🇫🇷</div>
+        <div class="lang-name">Français</div>
+        <div class="lang-level" data-nl="Goed" data-en="Good">Goed</div>
+        <div class="lang-dots"><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot filled"></div><div class="lang-dot"></div><div class="lang-dot"></div></div>
+      </div>
+      <div class="lang-card reveal">
+        <div class="lang-flag">🇩🇪</div>
+        <div class="lang-name">Deutsch</div>
+        <div class="lang-level" data-nl="Basiskennis" data-en="Basic">Basiskennis</div>
+        <div class="lang-dots"><div class="lang-dot filled"></div><div class="lang-dot"></div><div class="lang-dot"></div><div class="lang-dot"></div><div class="lang-dot"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-container"></div>
+
+<script src="nav-footer.js"></script>
+<script src="main.js"></script>
+<script>
+  document.getElementById('nav-container').innerHTML = getNavHTML('about.html');
+  document.getElementById('footer-container').innerHTML = getFooterHTML();
+</script>
+</body>
+</html>
