@@ -38,17 +38,7 @@
   width: 5px; background: var(--iqcs-blauw);
 }
 
-.hero-company {
-  display: flex; flex-direction: column; margin-bottom: 1.8rem;
-}
-.hero-company-main {
-  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.28em;
-  text-transform: uppercase; color: var(--iqcs-blauw);
-}
-.hero-company-sub {
-  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--iqcs-donker);
-}
+.hero-company { margin-bottom: 1.8rem; }
 
 .hero-title {
   font-size: clamp(2.6rem, 4.2vw, 4.2rem); font-weight: 900;
@@ -228,9 +218,12 @@
 <!-- HERO -->
 <section class="hero" id="main">
   <div class="hero-left">
-    <div class="hero-company">
-      <span class="hero-company-main">IQUESS</span>
-      <span class="hero-company-sub">Consulting bv</span>
+    <div class="hero-company brand-lockup">
+      <img src="images/logo.png" alt="iQuess Consulting Logo">
+      <div class="brand-lockup-text">
+        <span class="brand-lockup-main">IQUESS</span>
+        <span class="brand-lockup-sub">Consulting</span>
+      </div>
     </div>
     <h1 class="hero-title" data-nl="Strategie.<br>Transformatie.<br><span>Resultaten.</span>" data-en="Strategy.<br>Transformation.<br><span>Results.</span>">Strategie.<br>Transformatie.<br><span>Resultaten.</span></h1>
     <p class="hero-sub" data-nl="30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Wim Verfaille verbindt technologie met zakelijk inzicht." data-en="30+ years of proven expertise in operational management, digital transformation and ERP implementations. Wim Verfaille connects technology with business insight.">30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Wim Verfaille verbindt technologie met zakelijk inzicht.</p>

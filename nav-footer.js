@@ -13,11 +13,11 @@ function getNavHTML(activePage) {
   ).join('');
   return `
   <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="index.html" class="nav-logo brand-lockup">
       <img src="images/logo.png" alt="iQuess Consulting Logo">
-      <div class="nav-brand">
-        <span class="nav-brand-main">IQUESS</span>
-        <span class="nav-brand-sub">Consulting</span>
+      <div class="brand-lockup-text">
+        <span class="brand-lockup-main">IQUESS</span>
+        <span class="brand-lockup-sub">Consulting</span>
       </div>
     </a>
     <div class="nav-links" id="navLinks">
@@ -42,11 +42,11 @@ function getFooterHTML() {
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo-row">
+          <div class="footer-logo-row brand-lockup on-dark">
             <img src="images/logo.png" alt="iQuess Consulting Logo">
-            <div>
-              <div class="footer-brand-name">IQUESS</div>
-              <div class="footer-brand-sub">Consulting bv</div>
+            <div class="brand-lockup-text">
+              <span class="brand-lockup-main">IQUESS</span>
+              <span class="brand-lockup-sub">Consulting</span>
             </div>
           </div>
           <p id="footer-tagline">Senior freelance consultant gespecialiseerd in digitale transformatie, ERP-implementaties en strategisch management.</p>
