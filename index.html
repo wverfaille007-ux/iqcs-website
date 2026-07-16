@@ -119,12 +119,18 @@
   border-radius: 2px; padding: 0.25rem 0.7rem;
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
 }
-/* Toegevouwen placeholder-blok voor toekomstige consultants */
+/* Compact placeholder-blok voor toekomstige consultants — zelfde kaartstijl, leeg, niet-klikbaar */
 .hero-card-more {
-  border: 1px dashed rgba(217,242,253,0.4); border-radius: 4px;
-  padding: 0.7rem 1.2rem; text-align: center;
-  font-size: 0.76rem; font-weight: 600; letter-spacing: 0.03em;
-  color: rgba(217,242,253,0.65);
+  position: relative;
+  min-height: 44px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(217,242,253,0.3);
+  border-radius: 4px;
+}
+.hero-card-more::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: rgba(217,242,253,0.5);
 }
 
 /* ── DIENSTEN ── */
@@ -249,9 +255,9 @@
       <a href="services.html" class="btn-outline" data-nl="Mijn diensten" data-en="My services">Mijn diensten</a>
     </div>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">30+</div><div class="stat-label" data-nl="Jaar ervaring" data-en="Years experience">Jaar ervaring</div></div>
-      <div class="stat"><div class="stat-num">20%</div><div class="stat-label" data-nl="Efficiëntiewinst ERP" data-en="ERP efficiency gain">Efficiëntiewinst ERP</div></div>
-      <div class="stat"><div class="stat-num">€1M+</div><div class="stat-label" data-nl="Gegenereerde omzet" data-en="Revenue generated">Gegenereerde omzet</div></div>
+      <div class="stat"><div class="stat-num">30+</div><div class="stat-label" data-nl="Jaar ervaring" data-en="Years of experience">Jaar ervaring</div></div>
+      <div class="stat"><div class="stat-num">30%</div><div class="stat-label" data-nl="Tot efficiëntiewinst" data-en="Up to efficiency gain">Tot efficiëntiewinst</div></div>
+      <div class="stat"><div class="stat-num">30%</div><div class="stat-label" data-nl="Hogere klanttevredenheid" data-en="Higher customer satisfaction">Hogere klanttevredenheid</div></div>
     </div>
   </div>
 
@@ -275,7 +281,7 @@
           <span class="hero-card-tag">Agile</span>
         </div>
       </div>
-      <div class="hero-card-more" data-nl="+ Ruimte voor nieuwe consultants" data-en="+ Room for new consultants">+ Ruimte voor nieuwe consultants</div>
+      <div class="hero-card-more" aria-hidden="true"></div>
     </div>
   </div>
 </section>
@@ -307,13 +313,11 @@
   <div class="container">
     <div class="waarom-grid">
       <div class="waarom-visual reveal">
-        <div class="wv-stat"><div class="wv-num">30+</div><div class="wv-label" data-nl="Jaar professionele ervaring" data-en="Years of professional experience">Jaar professionele ervaring</div></div>
+        <div class="wv-stat"><div class="wv-num">30+</div><div class="wv-label" data-nl="Jaar ervaring" data-en="Years of experience">Jaar ervaring</div></div>
         <div class="wv-divider"></div>
-        <div class="wv-stat"><div class="wv-num">20%</div><div class="wv-label" data-nl="Efficiëntiewinst gerealiseerd via SAP ERP" data-en="Efficiency gain via SAP ERP implementation">Efficiëntiewinst gerealiseerd via SAP ERP</div></div>
+        <div class="wv-stat"><div class="wv-num">30%</div><div class="wv-label" data-nl="Tot efficiëntiewinst" data-en="Up to efficiency gain">Tot efficiëntiewinst</div></div>
         <div class="wv-divider"></div>
-        <div class="wv-stat"><div class="wv-num">30%</div><div class="wv-label" data-nl="Omzetgroei via PCI DSS betaalplatform" data-en="Revenue growth via PCI DSS payment platform">Omzetgroei via PCI DSS betaalplatform</div></div>
-        <div class="wv-divider"></div>
-        <div class="wv-stat"><div class="wv-num">€1M+</div><div class="wv-label" data-nl="Nieuwe jaarlijkse inkomsten gegenereerd" data-en="New annual revenue generated">Nieuwe jaarlijkse inkomsten gegenereerd</div></div>
+        <div class="wv-stat"><div class="wv-num">30%</div><div class="wv-label" data-nl="Hogere klanttevredenheid" data-en="Higher customer satisfaction">Hogere klanttevredenheid</div></div>
       </div>
       <div class="waarom-content reveal">
         <div class="header-bar" data-nl="Waarom iQuess Consulting" data-en="Why iQuess Consulting">Waarom iQuess Consulting</div>
@@ -321,7 +325,7 @@
         <div class="w-punt"><div class="w-punt-icon" aria-hidden="true">1</div><div><h4 data-nl="Bewezen resultaten" data-en="Proven results">Bewezen resultaten</h4><p data-nl="30+ jaar aantoonbare prestaties in uiteenlopende sectoren en complexe omgevingen." data-en="30+ years of demonstrable achievements across diverse sectors and complex environments.">30+ jaar aantoonbare prestaties in uiteenlopende sectoren en complexe omgevingen.</p></div></div>
         <div class="w-punt"><div class="w-punt-icon" aria-hidden="true">2</div><div><h4 data-nl="End-to-end aanpak" data-en="End-to-end approach">End-to-end aanpak</h4><p data-nl="Van strategievorming tot uitvoering en nazorg — het volledige traject begeleid." data-en="From strategy to execution and follow-up — the complete journey guided.">Van strategievorming tot uitvoering en nazorg — het volledige traject begeleid.</p></div></div>
         <div class="w-punt"><div class="w-punt-icon" aria-hidden="true">3</div><div><h4 data-nl="Taalvaardig & flexibel" data-en="Multilingual & flexible">Taalvaardig & flexibel</h4><p data-nl="Actief in NL, EN en FR — klaar voor nationale en internationale opdrachten." data-en="Active in NL, EN and FR — ready for national and international assignments.">Actief in NL, EN en FR — klaar voor nationale en internationale opdrachten.</p></div></div>
-        <a href="about.html" class="btn-outline" data-nl="Maak kennis met ons team" data-en="Meet our team">Maak kennis met ons team</a>
+        <a href="about.html" class="btn-outline" data-nl="Meer over ons team" data-en="More about our team">Meer over ons team</a>
       </div>
     </div>
   </div>
