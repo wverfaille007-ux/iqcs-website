@@ -70,6 +70,7 @@ function getFooterHTML() {
       </div>
       <div class="footer-bottom">
         <span id="footer-rights">© 2025 iQuess Consulting bv — Wim Verfaille. Alle rechten voorbehouden.</span>
+        <a id="footer-privacy" href="privacy.html" style="color:rgba(217,242,253,0.8); font-size:0.8rem; text-decoration:underline;">Privacybeleid</a>
         <span style="color:rgba(163,227,253,0.5); font-size:0.72rem; letter-spacing:0.1em;">IQUESS · CONSULTING · BE</span>
       </div>
     </div>

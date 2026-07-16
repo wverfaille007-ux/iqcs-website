@@ -6,7 +6,8 @@ const i18n = {
     footer: {
       tagline: 'Senior freelance consultant gespecialiseerd in digitale transformatie, ERP-implementaties en strategisch management.',
       nav: 'Navigatie', contact: 'Contact',
-      rights: '© 2025 iQuess Consulting bv — Wim Verfaille. Alle rechten voorbehouden.'
+      rights: '© 2025 iQuess Consulting bv — Wim Verfaille. Alle rechten voorbehouden.',
+      privacy: 'Privacybeleid'
     }
   },
   en: {
@@ -14,7 +15,8 @@ const i18n = {
     footer: {
       tagline: 'Senior freelance consultant specialising in digital transformation, ERP implementations and strategic management.',
       nav: 'Navigation', contact: 'Contact',
-      rights: '© 2025 iQuess Consulting bv — Wim Verfaille. All rights reserved.'
+      rights: '© 2025 iQuess Consulting bv — Wim Verfaille. All rights reserved.',
+      privacy: 'Privacy Policy'
     }
   }
 };
@@ -34,13 +36,14 @@ function setLang(lang) {
   Object.entries(map).forEach(([id,text]) => { const el=document.getElementById(id); if(el) el.textContent=text; });
   document.querySelectorAll('[data-nl]').forEach(el => { el.innerHTML = el.dataset[lang] || el.dataset.nl; });
   const ft = i18n[lang].footer;
-  ['footer-tagline','footer-nav-title','footer-contact-title','footer-rights'].forEach(id => {
+  ['footer-tagline','footer-nav-title','footer-contact-title','footer-rights','footer-privacy'].forEach(id => {
     const el = document.getElementById(id);
     if (!el) return;
     if (id==='footer-tagline') el.textContent = ft.tagline;
     if (id==='footer-nav-title') el.textContent = ft.nav;
     if (id==='footer-contact-title') el.textContent = ft.contact;
     if (id==='footer-rights') el.textContent = ft.rights;
+    if (id==='footer-privacy') el.textContent = ft.privacy;
   });
 }
 

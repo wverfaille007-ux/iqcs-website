@@ -67,7 +67,7 @@
   border: 1px solid var(--border);
 }
 .contact-form-wrap h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: 1.5rem; margin-bottom: 1.8rem; color: var(--text-body);
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
@@ -93,6 +93,11 @@
   box-shadow: 0 0 0 3px rgba(42,122,173,0.1);
 }
 .form-group textarea { resize: vertical; min-height: 130px; }
+.consent-group { margin-bottom: 1.2rem; }
+.consent-label { display: flex; align-items: flex-start; gap: 0.6rem; cursor: pointer; }
+.consent-label input[type="checkbox"] { margin-top: 0.2rem; width: 16px; height: 16px; accent-color: var(--iqcs-blauw); flex-shrink: 0; }
+.consent-label span { font-size: 0.85rem; color: var(--text-mid); line-height: 1.5; }
+.consent-label a { color: var(--iqcs-helder); text-decoration: underline; }
 .form-submit {
   width: 100%; background: var(--iqcs-donker); color: var(--iqcs-wit);
   border: none; border-radius: 4px; padding: 1rem;
@@ -208,6 +213,12 @@
             <label data-nl="Bericht" data-en="Message">Bericht</label>
             <textarea id="message" name="message" placeholder="Vertel over uw project, uitdaging of vraag..." required></textarea>
           </div>
+          <div class="form-group consent-group">
+            <label class="consent-label">
+              <input type="checkbox" id="consent" name="consent" required>
+              <span data-nl='Ik ga akkoord met de verwerking van mijn gegevens conform het <a href="privacy.html" target="_blank" rel="noopener">privacybeleid</a>.' data-en='I agree to the processing of my data in accordance with the <a href="privacy.html" target="_blank" rel="noopener">privacy policy</a>.'>Ik ga akkoord met de verwerking van mijn gegevens conform het <a href="privacy.html" target="_blank" rel="noopener">privacybeleid</a>.</span>
+            </label>
+          </div>
           <button type="submit" class="form-submit" id="submitBtn" data-nl="Verstuur bericht →" data-en="Send message →">Verstuur bericht →</button>
           <p class="form-error" id="formError" style="display:none;color:#e53e3e;margin-top:12px" data-nl="Versturen mislukt. Probeer opnieuw of mail rechtstreeks naar Info@IQCS.be." data-en="Sending failed. Please try again or email Info@IQCS.be directly.">Versturen mislukt. Probeer opnieuw of mail rechtstreeks naar Info@IQCS.be.</p>
         </form>
@@ -237,14 +248,15 @@
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const consentOk = document.getElementById('consent').checked;
 
     errorEl.style.display = 'none';
 
-    if (!emailOk || !message) {
+    if (!emailOk || !message || !consentOk) {
       btn.style.background = '#e53e3e';
       btn.textContent = currentLang === 'nl'
-        ? (!emailOk ? 'Geldig e-mailadres vereist' : 'Vul alle verplichte velden in')
-        : (!emailOk ? 'Valid email address required' : 'Please fill all required fields');
+        ? (!emailOk ? 'Geldig e-mailadres vereist' : (!consentOk ? 'Bevestig akkoord met privacybeleid' : 'Vul alle verplichte velden in'))
+        : (!emailOk ? 'Valid email address required' : (!consentOk ? 'Please confirm the privacy policy' : 'Please fill all required fields'));
       setTimeout(() => {
         btn.style.background = '';
         btn.textContent = currentLang === 'nl' ? 'Verstuur bericht →' : 'Send message →';
