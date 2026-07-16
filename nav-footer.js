@@ -63,7 +63,7 @@ function getFooterHTML() {
         <div class="footer-col">
           <h4 id="footer-contact-title">Contact</h4>
           <a href="mailto:Info@IQCS.be">Info@IQCS.be</a>
-          <a href="tel:+32498889269">+32 0498 889 269</a>
+          <a href="tel:+32498889269">+32 498 889 269</a>
           <a>Jan Frans Willemsstraat 2</a>
           <a>8550 Zwevegem, België</a>
         </div>

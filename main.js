@@ -24,6 +24,7 @@ let currentLang = localStorage.getItem('iqcs-lang') || 'nl';
 function setLang(lang) {
   currentLang = lang;
   localStorage.setItem('iqcs-lang', lang);
+  document.documentElement.lang = lang;
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
   const t = i18n[lang].nav;
   const map = {
