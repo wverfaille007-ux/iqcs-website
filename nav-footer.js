@@ -3,7 +3,7 @@
 function getNavHTML(activePage) {
   const pages = [
     { id: 'nav-home',     href: 'index.html',    nl: 'Home' },
-    { id: 'nav-about',    href: 'about.html',     nl: 'Over Wim' },
+    { id: 'nav-about',    href: 'about.html',     nl: 'Ons team' },
     { id: 'nav-services', href: 'services.html',  nl: 'Diensten' },
     { id: 'nav-cases',    href: 'cases.html',     nl: 'Referenties' },
     { id: 'nav-cv',       href: 'cv.html',        nl: 'CV & Expertise' },
@@ -49,12 +49,12 @@ function getFooterHTML() {
               <span class="brand-lockup-sub">Consulting</span>
             </div>
           </div>
-          <p id="footer-tagline">Senior freelance consultant gespecialiseerd in digitale transformatie, ERP-implementaties en strategisch management.</p>
+          <p id="footer-tagline">Senior consultancy gespecialiseerd in digitale transformatie, ERP-implementaties en strategisch management.</p>
         </div>
         <div class="footer-col">
           <h4 id="footer-nav-title">Navigatie</h4>
           <a id="footer-nav-home" href="index.html">Home</a>
-          <a id="footer-nav-about" href="about.html">Over Wim</a>
+          <a id="footer-nav-about" href="about.html">Ons team</a>
           <a id="footer-nav-services" href="services.html">Diensten</a>
           <a id="footer-nav-cases" href="cases.html">Referenties</a>
           <a id="footer-nav-cv" href="cv.html">CV & Expertise</a>
@@ -69,7 +69,7 @@ function getFooterHTML() {
         </div>
       </div>
       <div class="footer-bottom">
-        <span id="footer-rights">© 2025 iQuess Consulting bv — Wim Verfaille. Alle rechten voorbehouden.</span>
+        <span id="footer-rights">© 2025 IQCS bv. Alle rechten voorbehouden.</span>
         <a id="footer-privacy" href="privacy.html" style="color:rgba(217,242,253,0.8); font-size:0.8rem; text-decoration:underline;">Privacybeleid</a>
         <span style="color:rgba(163,227,253,0.5); font-size:0.72rem; letter-spacing:0.1em;">IQUESS · CONSULTING · BE</span>
       </div>

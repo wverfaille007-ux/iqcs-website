@@ -2,20 +2,20 @@
 
 const i18n = {
   nl: {
-    nav: { home:'Home', about:'Over Wim', services:'Diensten', cases:'Referenties', cv:'CV & Expertise', contact:'Contact' },
+    nav: { home:'Home', about:'Ons team', services:'Diensten', cases:'Referenties', cv:'CV & Expertise', contact:'Contact' },
     footer: {
-      tagline: 'Senior freelance consultant gespecialiseerd in digitale transformatie, ERP-implementaties en strategisch management.',
+      tagline: 'Senior consultancy gespecialiseerd in digitale transformatie, ERP-implementaties en strategisch management.',
       nav: 'Navigatie', contact: 'Contact',
-      rights: '© 2025 iQuess Consulting bv — Wim Verfaille. Alle rechten voorbehouden.',
+      rights: '© 2025 IQCS bv. Alle rechten voorbehouden.',
       privacy: 'Privacybeleid'
     }
   },
   en: {
-    nav: { home:'Home', about:'About Wim', services:'Services', cases:'References', cv:'CV & Expertise', contact:'Contact' },
+    nav: { home:'Home', about:'Our team', services:'Services', cases:'References', cv:'CV & Expertise', contact:'Contact' },
     footer: {
-      tagline: 'Senior freelance consultant specialising in digital transformation, ERP implementations and strategic management.',
+      tagline: 'Senior consultancy specialising in digital transformation, ERP implementations and strategic management.',
       nav: 'Navigation', contact: 'Contact',
-      rights: '© 2025 iQuess Consulting bv — Wim Verfaille. All rights reserved.',
+      rights: '© 2025 IQCS bv. All rights reserved.',
       privacy: 'Privacy Policy'
     }
   }
