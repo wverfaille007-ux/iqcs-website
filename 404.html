@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-nl="Pagina niet gevonden – IQCS" data-en="Page not found – IQCS">Pagina niet gevonden – IQCS</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+.nav-brand{display:flex;flex-direction:column;line-height:1}
+.nav-brand-main{font-size:1.05rem;font-weight:800;color:#2179A8;letter-spacing:.12em;text-transform:uppercase}
+.nav-brand-sub{font-size:.6rem;font-weight:700;color:#05486E;letter-spacing:.18em;text-transform:uppercase}
+</style>
+<style>
+.notfound-hero h1 { font-size: clamp(3.5rem,10vw,6rem); }
+.notfound-section { padding: 5rem 0 7rem; text-align: center; }
+.notfound-section .lead {
+  max-width: 480px; margin: 0 auto 2.2rem; color: var(--text-mid);
+  font-size: 1rem; line-height: 1.7;
+}
+.notfound-links {
+  display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;
+}
+.notfound-links a {
+  font-size: 0.85rem; font-weight: 600; color: var(--iqcs-helder);
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<div id="nav-container"></div>
+
+<div class="page-hero notfound-hero">
+  <h1 data-nl="404" data-en="404">404</h1>
+  <p data-nl="Pagina niet gevonden" data-en="Page not found">Pagina niet gevonden</p>
+</div>
+
+<section class="notfound-section">
+  <div class="container">
+    <p class="lead reveal" data-nl="De pagina die u zoekt bestaat niet (meer) of het adres is niet correct. Ga terug naar de homepage of gebruik een van de links hieronder." data-en="The page you're looking for doesn't exist (anymore) or the address is incorrect. Go back to the homepage or use one of the links below.">De pagina die u zoekt bestaat niet (meer) of het adres is niet correct. Ga terug naar de homepage of gebruik een van de links hieronder.</p>
+    <a href="index.html" class="btn-primary reveal" data-nl="Terug naar home" data-en="Back to home">Terug naar home</a>
+    <div class="notfound-links reveal">
+      <a href="about.html" data-nl="Over Wim" data-en="About Wim">Over Wim</a>
+      <a href="services.html" data-nl="Diensten" data-en="Services">Diensten</a>
+      <a href="cases.html" data-nl="Referenties" data-en="References">Referenties</a>
+      <a href="cv.html" data-nl="CV & Expertise" data-en="CV & Expertise">CV & Expertise</a>
+      <a href="contact.html" data-nl="Contact" data-en="Contact">Contact</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-container"></div>
+<script src="nav-footer.js"></script>
+<script src="main.js"></script>
+<script>
+  document.getElementById('nav-container').innerHTML = getNavHTML('404.html');
+  document.getElementById('footer-container').innerHTML = getFooterHTML();
+</script>
+</body>
+</html>
