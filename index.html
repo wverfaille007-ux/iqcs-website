@@ -80,12 +80,14 @@
   background: linear-gradient(160deg, var(--iqcs-donker) 0%, var(--iqcs-blauw) 100%);
 }
 .hero-dots {
-  position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  display: grid; grid-template-columns: repeat(5,1fr);
-  gap: 1.5rem; opacity: 0.22; pointer-events: none;
+  position: absolute; right: -60px; top: -60px;
+  width: clamp(320px, 32vw, 560px);
+  aspect-ratio: 1 / 1;
+  background-image: url('images/dots-pattern.png');
+  background-size: contain; background-repeat: no-repeat;
+  opacity: 0.85; pointer-events: none;
 }
-.hero-dots .d { background: var(--iqcs-licht); border-radius: 50%; animation: breathe 3.5s infinite ease-in-out; }
+.hero-dots .d { display: none; }
 
 .hero-team {
   position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
@@ -214,9 +216,8 @@
 @media (max-width:900px) {
   .hero { grid-template-columns:1fr; }
   .hero-left { padding: 7rem 1.5rem 3rem; }
-  .hero-right { min-height: 460px; }
-  .hero-team { bottom: 1.8rem; gap: 0.6rem; }
-  .hero-card { padding: 1.4rem 1.6rem; }
+  .hero-right { min-height: 320px; }
+  .hero-dots { width: 260px; }
   .diensten-grid { grid-template-columns:1fr; }
   .waarom-grid { grid-template-columns:1fr; }
 }
@@ -233,7 +234,6 @@
     <a href="about.html">Ons team</a>
     <a href="services.html">Diensten</a>
     <a href="cases.html">Referenties</a>
-    <a href="cv.html">CV & Expertise</a>
     <a href="contact.html">Contact</a>
   </nav>
 </noscript>
@@ -249,7 +249,7 @@
       </div>
     </div>
     <h1 class="hero-title" data-nl="Strategie.<br>Transformatie.<br><span>Resultaten.</span>" data-en="Strategy.<br>Transformation.<br><span>Results.</span>">Strategie.<br>Transformatie.<br><span>Resultaten.</span></h1>
-    <p class="hero-sub" data-nl="30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Wim Verfaille verbindt technologie met zakelijk inzicht." data-en="30+ years of proven expertise in operational management, digital transformation and ERP implementations. Wim Verfaille connects technology with business insight.">30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Wim Verfaille verbindt technologie met zakelijk inzicht.</p>
+    <p class="hero-sub" data-nl="30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Ons team verbindt technologie met zakelijk inzicht." data-en="30+ years of proven expertise in operational management, digital transformation and ERP implementations. Our team connects technology with business insight.">30+ jaar bewezen expertise in operationeel management, digitale transformatie en ERP-implementaties. Ons team verbindt technologie met zakelijk inzicht.</p>
     <div class="hero-buttons">
       <a href="contact.html" class="btn-primary" data-nl="Samenwerken?" data-en="Let's work together?">Samenwerken?</a>
       <a href="services.html" class="btn-outline" data-nl="Mijn diensten" data-en="My services">Mijn diensten</a>
@@ -263,25 +263,9 @@
 
   <div class="hero-right">
     <div class="hero-dots">
-      <div class="d" style="width:14px;height:14px"></div><div class="d" style="width:28px;height:28px;animation-delay:.4s"></div><div class="d" style="width:12px;height:12px;animation-delay:.8s"></div><div class="d" style="width:20px;height:20px;animation-delay:1.2s"></div><div class="d" style="width:16px;height:16px;animation-delay:.2s"></div>
-      <div class="d" style="width:32px;height:32px;animation-delay:.3s"></div><div class="d" style="width:10px;height:10px;animation-delay:.7s"></div><div class="d" style="width:24px;height:24px;animation-delay:1.1s"></div><div class="d" style="width:8px;height:8px;animation-delay:.5s"></div><div class="d" style="width:18px;height:18px;animation-delay:.9s"></div>
-      <div class="d" style="width:22px;height:22px;animation-delay:.6s"></div><div class="d" style="width:36px;height:36px;animation-delay:0s"></div><div class="d" style="width:10px;height:10px;animation-delay:1s"></div><div class="d" style="width:26px;height:26px;animation-delay:.4s"></div><div class="d" style="width:14px;height:14px;animation-delay:.8s"></div>
-    </div>
-    <div class="hero-team">
-      <div class="hero-team-label" data-nl="Ons team" data-en="Our team">Ons team</div>
-      <div class="hero-card">
-        <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--iqcs-licht);margin-bottom:0.2rem;" data-nl="Consultant" data-en="Consultant">Consultant</div>
-        <div class="hero-card-name">Wim Verfaille</div>
-        <div class="hero-card-title" data-nl="CIO · COO · Program Manager · Lean Six Sigma Black Belt" data-en="CIO · COO · Program Manager · Lean Six Sigma Black Belt">CIO · COO · Program Manager · Lean Six Sigma Black Belt</div>
-        <div class="hero-card-tags">
-          <span class="hero-card-tag">SAP ERP</span>
-          <span class="hero-card-tag">MS Dynamics 365</span>
-          <span class="hero-card-tag">Azure</span>
-          <span class="hero-card-tag">PRINCE2</span>
-          <span class="hero-card-tag">Agile</span>
-        </div>
-      </div>
-      <div class="hero-card-more" aria-hidden="true"></div>
+      <div class="d" style="width:20px;height:20px"></div><div class="d" style="width:40px;height:40px;animation-delay:.4s"></div><div class="d" style="width:17px;height:17px;animation-delay:.8s"></div><div class="d" style="width:28px;height:28px;animation-delay:1.2s"></div><div class="d" style="width:22px;height:22px;animation-delay:.2s"></div>
+      <div class="d" style="width:45px;height:45px;animation-delay:.3s"></div><div class="d" style="width:14px;height:14px;animation-delay:.7s"></div><div class="d" style="width:34px;height:34px;animation-delay:1.1s"></div><div class="d" style="width:11px;height:11px;animation-delay:.5s"></div><div class="d" style="width:25px;height:25px;animation-delay:.9s"></div>
+      <div class="d" style="width:31px;height:31px;animation-delay:.6s"></div><div class="d" style="width:50px;height:50px;animation-delay:0s"></div><div class="d" style="width:14px;height:14px;animation-delay:1s"></div><div class="d" style="width:36px;height:36px;animation-delay:.4s"></div><div class="d" style="width:20px;height:20px;animation-delay:.8s"></div>
     </div>
   </div>
 </section>

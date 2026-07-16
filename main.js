@@ -2,7 +2,7 @@
 
 const i18n = {
   nl: {
-    nav: { home:'Home', about:'Ons team', services:'Diensten', cases:'Referenties', cv:'CV & Expertise', contact:'Contact' },
+    nav: { home:'Home', about:'Ons team', services:'Diensten', cases:'Referenties', contact:'Contact' },
     footer: {
       tagline: 'Senior consultancy gespecialiseerd in digitale transformatie, ERP-implementaties en strategisch management.',
       nav: 'Navigatie', contact: 'Contact',
@@ -11,7 +11,7 @@ const i18n = {
     }
   },
   en: {
-    nav: { home:'Home', about:'Our team', services:'Services', cases:'References', cv:'CV & Expertise', contact:'Contact' },
+    nav: { home:'Home', about:'Our team', services:'Services', cases:'References', contact:'Contact' },
     footer: {
       tagline: 'Senior consultancy specialising in digital transformation, ERP implementations and strategic management.',
       nav: 'Navigation', contact: 'Contact',
@@ -30,8 +30,8 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
   const t = i18n[lang].nav;
   const map = {
-    'nav-home':t.home,'nav-about':t.about,'nav-services':t.services,'nav-cases':t.cases,'nav-cv':t.cv,'nav-contact':t.contact,
-    'footer-nav-home':t.home,'footer-nav-about':t.about,'footer-nav-services':t.services,'footer-nav-cases':t.cases,'footer-nav-cv':t.cv,'footer-nav-contact':t.contact
+    'nav-home':t.home,'nav-about':t.about,'nav-services':t.services,'nav-cases':t.cases,'nav-contact':t.contact,
+    'footer-nav-home':t.home,'footer-nav-about':t.about,'footer-nav-services':t.services,'footer-nav-cases':t.cases,'footer-nav-contact':t.contact
   };
   Object.entries(map).forEach(([id,text]) => { const el=document.getElementById(id); if(el) el.textContent=text; });
   document.querySelectorAll('[data-nl]').forEach(el => { el.innerHTML = el.dataset[lang] || el.dataset.nl; });

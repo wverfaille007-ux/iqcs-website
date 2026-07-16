@@ -6,7 +6,6 @@ function getNavHTML(activePage) {
     { id: 'nav-about',    href: 'about.html',     nl: 'Ons team' },
     { id: 'nav-services', href: 'services.html',  nl: 'Diensten' },
     { id: 'nav-cases',    href: 'cases.html',     nl: 'Referenties' },
-    { id: 'nav-cv',       href: 'cv.html',        nl: 'CV & Expertise' },
   ];
   const links = pages.map(p =>
     `<a id="${p.id}" href="${p.href}" class="${activePage === p.href ? 'active' : ''}">${p.nl}</a>`
@@ -57,7 +56,6 @@ function getFooterHTML() {
           <a id="footer-nav-about" href="about.html">Ons team</a>
           <a id="footer-nav-services" href="services.html">Diensten</a>
           <a id="footer-nav-cases" href="cases.html">Referenties</a>
-          <a id="footer-nav-cv" href="cv.html">CV & Expertise</a>
           <a id="footer-nav-contact" href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
