@@ -2,11 +2,11 @@
 
 function getNavHTML(activePage) {
   const pages = [
-    { id: 'nav-home',     href: 'index.html',    nl: 'Home',           en: 'Home' },
-    { id: 'nav-about',    href: 'about.html',     nl: 'Over Wim',       en: 'About Wim' },
-    { id: 'nav-services', href: 'services.html',  nl: 'Diensten',       en: 'Services' },
-    { id: 'nav-cases',    href: 'cases.html',     nl: 'Referenties',    en: 'References' },
-    { id: 'nav-cv',       href: 'cv.html',        nl: 'CV & Expertise', en: 'CV & Expertise' },
+    { id: 'nav-home',     href: 'index.html',    nl: 'Home' },
+    { id: 'nav-about',    href: 'about.html',     nl: 'Over Wim' },
+    { id: 'nav-services', href: 'services.html',  nl: 'Diensten' },
+    { id: 'nav-cases',    href: 'cases.html',     nl: 'Referenties' },
+    { id: 'nav-cv',       href: 'cv.html',        nl: 'CV & Expertise' },
   ];
   const links = pages.map(p =>
     `<a id="${p.id}" href="${p.href}" class="${activePage === p.href ? 'active' : ''}">${p.nl}</a>`
