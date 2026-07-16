@@ -68,9 +68,21 @@
 </head>
 <body>
 
-<div id="nav-container"></div>
+<a href="#main" class="skip-link" data-nl="Ga naar hoofdinhoud" data-en="Skip to main content">Ga naar hoofdinhoud</a>
 
-<div class="page-hero">
+<div id="nav-container"></div>
+<noscript>
+  <nav class="noscript-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">Over Wim</a>
+    <a href="services.html">Diensten</a>
+    <a href="cases.html">Referenties</a>
+    <a href="cv.html">CV & Expertise</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</noscript>
+
+<div class="page-hero" id="main">
   <h1 data-nl="CV & Expertise" data-en="CV & Expertise">CV & Expertise</h1>
   <p data-nl="30+ jaar operationele en technische uitmuntendheid" data-en="30+ years of operational and technical excellence">30+ jaar operationele en technische uitmuntendheid</p>
 </div>
@@ -81,7 +93,7 @@
 
       <!-- TIMELINE -->
       <div class="reveal">
-        <h3 class="timeline-title"><span>💼</span> <span data-nl="Professionele Ervaring" data-en="Professional Experience">Professionele Ervaring</span></h3>
+        <h3 class="timeline-title"><span aria-hidden="true">💼</span> <span data-nl="Professionele Ervaring" data-en="Professional Experience">Professionele Ervaring</span></h3>
         <div class="timeline">
 
           <div class="tl-item">
@@ -238,19 +250,19 @@
     </div>
     <div class="cert-grid">
       <div class="cert-card reveal">
-        <div class="cert-icon">🎓</div>
+        <div class="cert-icon" aria-hidden="true">🎓</div>
         <div class="cert-title" data-nl="Master in Elektriciteit" data-en="Master in Electricity">Master in Elektriciteit</div>
         <div class="cert-org">Hogeschool West-Vlaanderen</div>
         <div class="cert-year">1994</div>
       </div>
       <div class="cert-card reveal">
-        <div class="cert-icon">⚫</div>
+        <div class="cert-icon" aria-hidden="true">⚫</div>
         <div class="cert-title">Lean Six Sigma Black Belt</div>
         <div class="cert-org" data-nl="Dienstensector" data-en="Service sector">Dienstensector</div>
         <div class="cert-year">2020</div>
       </div>
       <div class="cert-card reveal">
-        <div class="cert-icon">📋</div>
+        <div class="cert-icon" aria-hidden="true">📋</div>
         <div class="cert-title">PRINCE2 Foundation</div>
         <div class="cert-org">Project Management</div>
         <div class="cert-year">2020</div>

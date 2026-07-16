@@ -51,9 +51,17 @@ window.addEventListener('scroll', () => {
   document.querySelector('nav')?.classList.toggle('scrolled', window.scrollY > 40);
 });
 
+function setNavOpen(open) {
+  const navLinks = document.querySelector('.nav-links');
+  const hamburger = document.getElementById('hamburger');
+  navLinks?.classList.toggle('open', open);
+  hamburger?.setAttribute('aria-expanded', String(open));
+}
+
 document.addEventListener('click', e => {
-  if (e.target.closest('.hamburger')) document.querySelector('.nav-links')?.classList.toggle('open');
-  else if (!e.target.closest('nav')) document.querySelector('.nav-links')?.classList.remove('open');
+  const navLinks = document.querySelector('.nav-links');
+  if (e.target.closest('.hamburger')) setNavOpen(!navLinks?.classList.contains('open'));
+  else if (!e.target.closest('nav')) setNavOpen(false);
 });
 
 function initReveal() {

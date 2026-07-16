@@ -96,6 +96,22 @@ img { max-width: 100%; display: block; }
 }
 .btn-white:hover { background: var(--iqcs-licht); transform: translateY(-2px); }
 
+/* ── SKIP LINK (toegankelijkheid) ── */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 1000;
+  background: var(--iqcs-donker); color: var(--iqcs-wit);
+  padding: 0.8rem 1.4rem; font-weight: 700; font-size: 0.9rem;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus { left: 0; }
+
+.noscript-nav {
+  display: flex; flex-wrap: wrap; gap: 1.2rem;
+  padding: 1rem 2rem; background: var(--iqcs-donker);
+}
+.noscript-nav a { color: var(--iqcs-wit); font-weight: 600; font-size: 0.9rem; }
+.noscript-nav a:hover { text-decoration: underline; }
+
 /* ── NAVIGATION ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -147,7 +163,10 @@ nav.scrolled { box-shadow: 0 4px 24px rgba(5,72,110,0.12); }
   background: var(--iqcs-blauw); color: var(--iqcs-wit); border-color: var(--iqcs-blauw);
 }
 
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px;
+  background: none; border: none; -webkit-appearance: none; appearance: none;
+}
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--iqcs-blauw); border-radius: 2px; transition: all 0.3s; }
 
 /* ── PAGE HERO (inner pages) ── */

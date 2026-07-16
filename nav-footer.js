@@ -29,9 +29,9 @@ function getNavHTML(activePage) {
         <button class="lang-btn active" data-lang="nl">NL</button>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
-      <div class="hamburger" id="hamburger">
+      <button class="hamburger" id="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
   </nav>`;
 }
