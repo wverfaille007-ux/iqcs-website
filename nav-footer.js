@@ -53,12 +53,12 @@ function getFooterHTML() {
         </div>
         <div class="footer-col">
           <h4 id="footer-nav-title">Navigatie</h4>
-          <a href="index.html">Home</a>
-          <a href="about.html">Over Wim</a>
-          <a href="services.html">Diensten</a>
-          <a href="cases.html">Referenties</a>
-          <a href="cv.html">CV & Expertise</a>
-          <a href="contact.html">Contact</a>
+          <a id="footer-nav-home" href="index.html">Home</a>
+          <a id="footer-nav-about" href="about.html">Over Wim</a>
+          <a id="footer-nav-services" href="services.html">Diensten</a>
+          <a id="footer-nav-cases" href="cases.html">Referenties</a>
+          <a id="footer-nav-cv" href="cv.html">CV & Expertise</a>
+          <a id="footer-nav-contact" href="contact.html">Contact</a>
         </div>
         <div class="footer-col">
           <h4 id="footer-contact-title">Contact</h4>
